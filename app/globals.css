@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 6px;
+  height: 80px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #141a06;
+}
+
+.dropdown ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
+.dropdown ul::-webkit-scrollbar-thumb {
+  background-color: initial;
+  border-radius: 0px;
+}
+
+.dropdown ul {
+  box-shadow: none;
+}
+.no-outline:focus {
+  outline: none;
+}
+
+#simple-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+@layer base {
+  :root {
+    --bg-dark: #363636;
+    --bg-darker: #100e17;
+    --primary: #bfff34;
+    --color-white: #f4f8fd;
+  }
+}
+
+/* styles for splide carousel */
+@layer components {
+  .splide-custom .splide__arrow {
+    @apply relative top-0 left-0 right-0 flex items-center justify-center w-12 h-12 bg-transparent border border-solid border-n-4/50 rounded-full transform-none transition-colors hover:border-n-3;
+  }
+
+  .splide-custom .splide__arrow:hover svg {
+    @apply fill-n-1;
+  }
+
+  .splide-custom .splide__arrow svg {
+    @apply w-4 h-4 fill-n-4 transform-none transition-colors;
+  }
+
+  .splide-visible .splide__track {
+    @apply overflow-visible;
+  }
+
+  .splide-pricing .splide__list {
+    @apply lg:grid !important;
+    @apply lg:grid-cols-3 lg:gap-4;
+  }
+
+  .splide-benefits .splide__list {
+    @apply md:grid !important;
+    @apply md:grid-cols-3 md:gap-x-10 md:gap-y-[4.5rem] xl:gap-y-[6rem];
+  }
+  .animation,
+  .animation_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .animation {
+    display: block;
+    position: relative;
+    z-index: 10;
+  }
+  .parallax {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  a.button.сoming {
+    opacity: 1;
+  }
+  a.button.сoming:after {
+    content: "coming soon";
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    background: #bfff34;
+    color: #000;
+    padding: 0 4px;
+    line-height: 0.8;
+    letter-spacing: 1.2px;
+  }
+
+  span {
+    overflow: hidden;
+  }
+  .main-btn {
+    position: absolute !important;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .panel {
+    position: relative;
+    border-radius: 0.375rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 1.25rem;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+      0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown ul {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    min-width: 120px;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    --tw-text-opacity: 1;
+    color: rgb(14 23 38 / var(--tw-text-opacity));
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+      0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+  .dropdown ul li > a,
+  .dropdown ul li > button {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .font-semibold {
+    font-weight: 500 !important;
+  }
+
+  .pt-\[4\.75rem\].lg\:pt-\[5\.25rem\].overflow-hidden.connect-wallet {
+    background-color: var(--bg-dark) !important;
+  }
+}
+
+.caption.hidden.lg\:block.text-n-4 {
+  color: #bfff34;
+}
+
+.disabled-button {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1b2b;
+  padding: 16px;
+  padding-block: 26px;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.bannerTitle {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+.bannerText {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #ada8c3;
+}
+.secondaryBtn {
+  color: #fff;
+  background: transparent;
+}
+.light .secondaryBtn {
+  color: #363636;
+  background: transparent;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* .light .bg-\[\#FECE00\] {
+    background: #4f4c4c
+} */
+
+.no-bridging {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.light .no-bridging {
+  color: #222222;
+}
